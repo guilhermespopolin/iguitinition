@@ -1,0 +1,2 @@
+webpackJsonp([0],{"./src/assets/img.jpg":function(e,t,s){e.exports=s.p+"static/media/img.eabe2bac.jpg"},"./src/components/screens/home/index.jsx":function(e,t,s){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=a(s("./node_modules/react/index.js")),c=a(s("./src/assets/img.jpg"));function a(e){return e&&e.__esModule?e:{default:e}}t.default=function(){return n.default.createElement("img",{style:{height:200,width:200},src:c.default,alt:"test"})}}});
+//# sourceMappingURL=0.982ec376.js.map
