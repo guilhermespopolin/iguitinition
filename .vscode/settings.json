@@ -2,8 +2,7 @@
   "files.exclude": {
     "node_modules": true,
     "coverage": true,
-    "*.config.js": true,
-    ".*": true
+    "*.config.js": true
   },
   "editor.renderWhitespace": "boundary",
   "editor.tabSize": 2,
