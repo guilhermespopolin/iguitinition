@@ -11,6 +11,5 @@ module.exports = merge(
     devtool: 'cheap-eval-source-map',
   },
   parts.loadCSS(),
-  parts.loadAsset(),
   parts.devServer(),
 );
