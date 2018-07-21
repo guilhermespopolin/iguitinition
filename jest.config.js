@@ -2,8 +2,8 @@ module.exports = {
   verbose: true,
   collectCoverageFrom: [
     'src/**.{js,jsx}',
-    '!src/Routes.jsx',
-    '!src/App.jsx',
+    '!src/components/App.jsx',
+    '!src/components/Routes.jsx',
     '!src/reducers/**',
     '!src/index.js',
     '!src/store.js',
