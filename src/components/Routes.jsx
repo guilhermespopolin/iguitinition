@@ -9,10 +9,12 @@ const Home = Loadable({
   loading: PageLoader,
 });
 
-const Routes = () => (
-  <Switch>
-    <Route exact path="/" component={Home} />
-  </Switch>
-);
+function Routes() {
+  return (
+    <Switch>
+      <Route exact path="/" component={Home} />
+    </Switch>
+  );
+}
 
 export default Routes;
