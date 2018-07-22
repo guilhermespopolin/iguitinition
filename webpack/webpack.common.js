@@ -30,4 +30,5 @@ module.exports = merge(
   },
   parts.loadJS(),
   parts.loadAsset(),
+  parts.loadTextfiles(),
 );

@@ -117,6 +117,17 @@ exports.extractCSS = () => {
   };
 };
 
+exports.loadTextfiles = () => ({
+  module: {
+    rules: [
+      {
+        test: [/\.txt$/, /\.md$/],
+        use: 'raw-loader',
+      },
+    ],
+  },
+});
+
 exports.devServer = () => ({
   devServer: {
     contentBase: paths.appPublic,
@@ -124,5 +135,6 @@ exports.devServer = () => ({
     historyApiFallback: true,
     open: true,
     hot: true,
+    port: '8080',
   },
 });
