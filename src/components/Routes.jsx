@@ -4,15 +4,15 @@ import Loadable from 'react-loadable';
 import { Switch, Route } from 'react-router-dom';
 import PageLoader from 'components/UI/pageLoader';
 
-const Home = Loadable({
-  loader: () => import('components/screens/home'),
+const Welcome = Loadable({
+  loader: () => import('components/screens/welcome'),
   loading: PageLoader,
 });
 
 function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Welcome} />
     </Switch>
   );
 }
