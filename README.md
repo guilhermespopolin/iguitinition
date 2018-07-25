@@ -12,25 +12,28 @@ You can run dev server by running the command: `yarn start`.
 
 ## Running the tests
 
-In order to run tests execute the command: `yarn test`
+In order to run tests execute the command: `yarn test`.
 
 ## Built With
 
- * [webpack]() - to budle application.
- * [babel]() - to deal with JS transpilling
- * [eslint]() - to deal with code best pratices.
- * [commitlint]() - to validate git commit messages.
- * [husky]() - to implements custom git hooks.
- * [react]() - to implement user interfaces.
- * [prop-typpes]() - for deal with Rect components prop validation.
- * [react-loadable]() - for deal with code spliting and lazy loading.
- * [react-router]() - for mange routes.
- * [redux]() - for manage global state;
- * [redux-thunk]() - for deal with asynchronicity on redux.
- * [css-modules]() - as _CSS_ processing.
- * [jest]() + [enzyme]() + [reac-test-renderer]() - for unit testing.
+ * [webpack](https://webpack.js.org) - to budle application.
+ * [babel](https://babeljs.io/) - to deal with JS transpilling
+ * [eslint](https://eslint.org/) - to deal with code best pratices.
+ * [commitlint](https://github.com/marionebl/commitlint) - to validate git commit messages.
+ * [husky](https://github.com/typicode/husky) - to implements custom git hooks.
+ * [react](https://reactjs.org/) - to implement user interfaces.
+ * [prop-typpes](https://www.npmjs.com/package/prop-types) - for deal with Rect components prop
+ validation.
+ * [react-loadable](https://github.com/jamiebuilds/react-loadable) - for deal with code spliting and
+ lazy loading.
+ * [react-router](https://github.com/ReactTraining/react-router) - for mange routes.
+ * [redux](https://redux.js.org/) - for manage global state;
+ * [redux-thunk](https://github.com/reduxjs/redux-thunk) - for deal with asynchronicity on redux.
+ * [css-modules](https://github.com/css-modules/css-modules) - as _CSS_ processing.
+ * [jest](https://jestjs.io) + [enzyme](https://github.com/airbnb/enzyme) +
+ [reac-test-renderer](https://www.npmjs.com/package/react-test-renderer) - for unit testing.
 
-## Authors
+## Author
 
 Guilherme Popolin
 
