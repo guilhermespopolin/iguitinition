@@ -11,5 +11,10 @@ module.exports = merge(
     devtool: 'cheap-eval-source-map',
   },
   parts.loadCSS(),
-  parts.devServer(),
+  parts.devServer({
+    useLocalIp: true,
+    open: true,
+    host: '0.0.0.0',
+    port: '8080',
+  }),
 );
