@@ -1,4 +1,6 @@
 # iGUInition
+[![GitHub license](https://img.shields.io/github/license/guilhermespopolin/iguitinition.svg)](https://github.com/guilhermespopolin/iguitinition/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/guilhermespopolin/iguitinition.svg)](https://github.com/guilhermespopolin/iguitinition/issues)
 
 Boilerplate from front end projects.
 
