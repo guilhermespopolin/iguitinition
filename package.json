@@ -7,6 +7,7 @@
   "scripts": {
     "commitmsg": "commitlint -E GIT_PARAMS",
     "precommit": "lint-staged -c lint-staged.config.js",
+    "commit": "commit",
     "prepush": "npm run 'test:coverage'",
     "start": "webpack-dev-server  --config webpack/config.js --env development",
     "build": "webpack --config webpack/config.js --env production",
@@ -34,6 +35,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "@commitlint/prompt-cli": "^7.0.0",
     "autoprefixer": "^8.1.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
