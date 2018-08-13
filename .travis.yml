@@ -1,0 +1,12 @@
+sudo: false
+language: node_js
+notifications:
+  email: false
+before_install:
+  - npm i -g npm@6.0.0
+before_script:
+  - npm prune
+script:
+    - npm run test
+after_sucess:
+  - npm run release
