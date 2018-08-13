@@ -17,8 +17,7 @@
     "test": "cross-env BABEL_ENV=test NODE_ENV=test jest",
     "test:coverage": "cross-env BABEL_ENV=test NODE_ENV=test jest --coverage --colors",
     "test:watch": "cross-env BABEL_ENV=test NODE_ENV=test jest --watch",
-    "server": "json-server --watch src/__mocks__/db.js --port 3042",
-    "release": "semantic-release"
+    "server": "json-server --watch src/__mocks__/db.js --port 3042"
   },
   "dependencies": {
     "axios": "^0.18.0",

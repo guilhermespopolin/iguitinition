@@ -9,4 +9,4 @@ notifications:
 script:
     - npm run test
 after_sucess:
-  - npm run release
+  - npx semantic-release
