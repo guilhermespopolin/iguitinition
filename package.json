@@ -1,9 +1,12 @@
 {
   "name": "iguinition",
-  "version": "0.0.1",
-  "main": "index.js",
+  "version": "0.0.0-development",
   "author": "Guilherme Popolin",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guilhermespopolin/iguitinition"
+  },
   "scripts": {
     "commitmsg": "commitlint -E GIT_PARAMS",
     "precommit": "lint-staged -c lint-staged.config.js",
@@ -14,7 +17,8 @@
     "test": "cross-env BABEL_ENV=test NODE_ENV=test jest",
     "test:coverage": "cross-env BABEL_ENV=test NODE_ENV=test jest --coverage --colors",
     "test:watch": "cross-env BABEL_ENV=test NODE_ENV=test jest --watch",
-    "server": "json-server --watch src/__mocks__/db.js --port 3042"
+    "server": "json-server --watch src/__mocks__/db.js --port 3042",
+    "release": "semantic-release"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -75,6 +79,7 @@
     "redux-devtools-extension": "^2.13.5",
     "redux-mock-store": "^1.5.3",
     "regenerator-runtime": "^0.11.1",
+    "semantic-release": "^15.9.8",
     "style-loader": "^0.20.3",
     "uglifyjs-webpack-plugin": "^1.2.2",
     "webpack": "^3.11.0",
