@@ -128,13 +128,13 @@ exports.loadTextfiles = () => ({
   },
 });
 
-exports.devServer = () => ({
+exports.devServer = options => ({
   devServer: {
     contentBase: paths.appPublic,
     stats: 'errors-only',
     historyApiFallback: true,
-    open: true,
     hot: true,
-    port: '8080',
+    compress: true,
+    ...options,
   },
 });
