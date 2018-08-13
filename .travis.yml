@@ -6,8 +6,6 @@ cache:
     - node_modules
 notifications:
   email: false
-before_script:
-  - npm prune
 script:
     - npm run test
 after_sucess:
