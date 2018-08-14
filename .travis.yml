@@ -8,5 +8,5 @@ notifications:
   email: false
 script:
   - npm run test
-after_sucess:
+after_success:
   - npx semantic-release
