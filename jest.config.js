@@ -28,4 +28,4 @@ module.exports = {
   },
   modulePaths: ['<rootDir>', '<rootDir>/src'],
   setupFiles: ['./jestsetup.config.js'],
-};
+}

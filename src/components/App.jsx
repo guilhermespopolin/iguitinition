@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Routes from './Routes';
+import { Provider } from 'react-redux'
+import { BrowserRouter as Router } from 'react-router-dom'
+import Routes from 'components/Routes'
 
-import store from '../store';
+import store from 'store'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Routes />
       </Router>
     </Provider>
-  );
+  )
 }
 
-export default App;
+export default App

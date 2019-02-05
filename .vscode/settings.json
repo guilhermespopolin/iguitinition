@@ -6,4 +6,5 @@
   "editor.renderWhitespace": "boundary",
   "editor.tabSize": 2,
   "files.eol": "\n",
+  "eslint.autoFixOnSave": true
 }
