@@ -22,7 +22,12 @@ const loadCSS = () => ({
         test: /\.css$/,
         exclude: paths.nodeModules,
         use: [
-          'style-loader',
+          {
+            loader: 'style-loader',
+            options: {
+              singleton: true,
+            },
+          },
           {
             loader: 'css-loader',
             options: {

@@ -6,7 +6,7 @@ const parts = require('./webpack.parts')
 
 module.exports = merge(
   {
-    entry: paths.src,
+    entry: ['@babel/polyfill', paths.src],
     output: {
       path: paths.build,
       filename: 'static/js/[name].[hash:8].js',

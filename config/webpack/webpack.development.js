@@ -17,6 +17,10 @@ module.exports = merge(
       historyApiFallback: true,
       hot: true,
       port: '8080',
+      overlay: {
+        errors: true,
+        warnings: true,
+      },
     },
   },
   parts.loadCSS(),
