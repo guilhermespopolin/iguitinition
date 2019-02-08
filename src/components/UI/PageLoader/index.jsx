@@ -3,28 +3,24 @@ import PropTypes from 'prop-types'
 
 import styles from './styles.css'
 
-function PageLoader({ error, pastDelay }) {
-  if (error) {
-    return <h1>Something went wrong!!</h1>
-  } else if (pastDelay) {
-    return (
-      <div className={styles.wrapper}>
-        <div className={styles.rubikLoader} />
-      </div>
-    )
+function PageLoader({ show }) {
+  if (!show) {
+    return null
   }
 
-  return null
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.rubikLoader} />
+    </div>
+  )
 }
 
 PageLoader.propTypes = {
-  error: PropTypes.instanceOf(Error),
-  pastDelay: PropTypes.bool,
+  show: PropTypes.bool,
 }
 
 PageLoader.defaultProps = {
-  error: null,
-  pastDelay: false,
+  show: true,
 }
 
 export default PageLoader
