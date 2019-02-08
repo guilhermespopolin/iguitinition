@@ -1,14 +1,14 @@
 const faker = require('faker')
 
-function generateEmployees(qtd = 50) {
-  const employees = []
+function generateUsers(qtd = 50) {
+  const users = []
 
   for (let id = 0; id < qtd; id += 1) {
     const firstName = faker.name.firstName()
     const lastName = faker.name.lastName()
     const email = faker.internet.email()
 
-    employees.push({
+    users.push({
       id,
       firstName,
       lastName,
@@ -16,7 +16,7 @@ function generateEmployees(qtd = 50) {
     })
   }
 
-  return { employees }
+  return { users }
 }
 
-module.exports = generateEmployees
+module.exports = generateUsers
