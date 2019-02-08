@@ -6,6 +6,8 @@ import Routes from 'components/Routes'
 
 import store from 'store'
 
+import './styles.css' // global css
+
 function App() {
   return (
     <Provider store={store}>
