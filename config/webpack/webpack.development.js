@@ -12,15 +12,12 @@ module.exports = merge(
     ],
     devServer: {
       contentBase: paths.appPublic,
-      open: 'google-chrome',
       stats: 'errors-only',
       historyApiFallback: true,
       hot: true,
+      open: true,
       port: '8080',
-      overlay: {
-        errors: true,
-        warnings: true,
-      },
+      overlay: true,
     },
   },
   parts.loadCSS(),

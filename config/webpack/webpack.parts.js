@@ -9,7 +9,7 @@ const loadJS = () => ({
       {
         test: /\.jsx?$/,
         exclude: paths.nodeModules,
-        use: 'babel-loader',
+        use: ['babel-loader', 'eslint-loader'],
       },
     ],
   },
@@ -25,7 +25,7 @@ const loadCSS = () => ({
           {
             loader: 'style-loader',
             options: {
-              singleton: true,
+              singleton: false,
             },
           },
           {
