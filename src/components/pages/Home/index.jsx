@@ -1,18 +1,42 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import styles from './styles.css'
+import Text from 'components/ui/Text'
+import Image from 'components/ui/Image'
 
-function Home({ text }) {
-  return <h1 className={styles.blue}>{text}</h1>
-}
+import reactLogo from 'assets/imgs/react_logo.svg'
 
-Home.propTypes = {
-  text: PropTypes.string,
-}
+function Home() {
+  return (
+    <main css="height: 100vh;">
+      <header
+        css={`
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40%;
+          background-color: ${({ theme }) => theme.colors.black};
+          color: ${({ theme }) => theme.colors.white};
+        `}
+      >
+        <Image
+          css={`
+            & {
+              transition: all 0.5s ease;
+            }
 
-Home.defaultProps = {
-  text: 'Home!',
+            &:hover {
+              transform: scale(1.1);
+            }
+          `}
+          src={reactLogo}
+          size="large"
+        />
+      </header>
+      <Text css="padding: 0 0.5rem;" alignment="center">
+        To get started, edit <code>src/components/pages/Home/index.jsx</code> and save to reload
+      </Text>
+    </main>
+  )
 }
 
 export default Home

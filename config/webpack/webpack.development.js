@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 
 const paths = require('../paths')
-const parts = require('./webpack.parts')
 
 module.exports = merge(
   {
@@ -20,5 +19,4 @@ module.exports = merge(
       overlay: true,
     },
   },
-  parts.loadCSS(),
 )

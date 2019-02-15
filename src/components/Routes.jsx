@@ -1,12 +1,18 @@
 import React from 'react'
 
+import Loadable from 'react-loadable'
 import { Switch, Route } from 'react-router-dom'
-import Home from 'components/pages/Home'
+import Loading from 'components/ui/Loading'
+
+const LoadableHome = Loadable({
+  loader: () => import('components/pages/Home'),
+  loading: Loading,
+})
 
 function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={LoadableHome} />
     </Switch>
   )
 }

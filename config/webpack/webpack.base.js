@@ -19,7 +19,7 @@ module.exports = merge(
     ],
     resolve: {
       modules: [paths.src, 'node_modules'],
-      extensions: ['.js', '.jsx', '.json', '.css'],
+      extensions: ['.js', '.jsx', '.json'],
     },
   },
   parts.loadJS(),

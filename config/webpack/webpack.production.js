@@ -3,7 +3,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const merge = require('webpack-merge')
 
 const paths = require('../paths')
-const parts = require('./webpack.parts')
 
 module.exports = merge(
   {
@@ -25,5 +24,4 @@ module.exports = merge(
       new Visualizer({ filename: 'statistics.html' }),
     ],
   },
-  parts.extractCSS(),
 )
