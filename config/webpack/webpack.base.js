@@ -15,6 +15,14 @@ module.exports = merge(
       new HtmlWebpackPlugin({
         template: paths.appIndexHtml,
         filename: 'index.html',
+        minify: {
+          collapseInlineTagWhitespace: true,
+          collapseWhitespace: true,
+          preserveLineBreaks: true,
+          minifyURLs: true,
+          removeComments: true,
+          removeAttributeQuotes: true,
+        },
       }),
     ],
     resolve: {
