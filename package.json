@@ -8,8 +8,7 @@
     "url": "https://github.com/guilhermespopolin/iguitinition"
   },
   "scripts": {
-    "commit": "commit",
-    "dev": "webpack-dev-server --mode development --config config/webpack --env development",
+    "develop": "webpack-dev-server --mode development --config config/webpack --env development",
     "build": "webpack --config config/webpack --env production",
     "test": "cross-env BABEL_ENV=test NODE_ENV=test jest",
     "test:coverage": "cross-env BABEL_ENV=test NODE_ENV=test jest --coverage --colors",

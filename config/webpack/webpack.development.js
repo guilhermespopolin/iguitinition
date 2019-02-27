@@ -14,9 +14,11 @@ module.exports = merge(
       stats: 'errors-only',
       historyApiFallback: true,
       hot: true,
-      open: true,
       port: '8080',
-      overlay: true,
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
     },
   },
 )
