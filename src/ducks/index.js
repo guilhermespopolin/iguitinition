@@ -1,7 +1,5 @@
-// export all reducers from ducks
-// Where user is duck implementation from user resource
-import users from './users'
+import resources from './resources'
 
 export default {
-  users,
+  resources,
 }

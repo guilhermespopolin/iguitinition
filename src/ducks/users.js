@@ -1,47 +1,31 @@
-import { unionBy } from 'lodash'
-import schema from 'schm'
-
-// Actions
-const UPDATE_USERS = 'iguinition/users/UPDATE'
-
-// Reducer
-const initalState = []
-
-export default function users(state = initalState, action) {
-  switch (action.type) {
-    case UPDATE_USERS:
-      return unionBy(state, action.payload, 'id')
-    default:
-      return state
-  }
-}
+import {
+  setResource,
+  updateResource,
+  removeResource,
+} from 'ducks/resources'
 
 // Action Creators
-export function updateUsers(usersList) {
-  return {
-    type: UPDATE_USERS,
-    payload: usersList,
-  }
+export function setUsers(payload) {
+  return setResource('users', payload)
 }
 
-// Side effects
-const userSchema = schema({
-  id: { type: Number, required: true },
-  name: String,
-  username: String,
-  email: String,
-})
+export function updateUser(userId, payload) {
+  return updateResource('users', userId, payload)
+}
 
-export function getUsers() {
+export function removeUser(userId) {
+  return removeResource('users', userId)
+}
+
+// Side Effects
+export function fetchUsers() {
   return async (dispatch) => {
-    const url = 'https://jsonplaceholder.typicode.com/users'
+    const url = 'http://localhost:3042/users'
     try {
       const response = await fetch(url)
-      const jsonResponse = await response.json()
-      const parsedResponse = jsonResponse.map(
-        user => userSchema.parse(user),
-      )
-      dispatch(updateUsers(parsedResponse))
+      const payload = await response.json()
+
+      dispatch(setUsers(payload))
     } catch (e) {
       throw new Error(e)
     }
