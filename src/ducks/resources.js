@@ -1,23 +1,31 @@
 import _ from 'lodash'
 import produce from 'immer'
 
-// Utils
-const normalizePayload = _.flow([
-  payload => _.keyBy(payload, 'id'),
-  temp => ({ ids: _.keys(temp), content: temp }),
-])
+import { normalizePayload } from 'ducks/utils'
 
-// Actions
-const SET = 'app/resources/SET'
-const UPDATE = 'app/resources/UPDATE'
-const REMOVE = 'app/resources/REMOVE'
+// Utils
+const SET = 'SET'
+const UPDATE = 'UPDATE'
+const REMOVE = 'REMOVE'
+
+function generateAction(operation, resourceType, resourceId) {
+  return `app/resources/${operation}/${resourceType.toUpperCase()}${resourceId ? `:${resourceId}` : ''}`
+}
 
 // Reducer
 const initialState = {}
 export default function resources(state = initialState, action) {
   const normalizedPayload = normalizePayload(action.payload)
 
-  switch (action.type) {
+  // gets the operation part of the action type
+  switch (action.type.split('/')[2]) {
+    case SET:
+      return produce(state, (draft) => {
+        draft[action.meta.resourceType] = {
+          ids: normalizedPayload.ids,
+          content: normalizedPayload.content,
+        }
+      })
     case UPDATE:
       return produce(state, (draft) => {
         if (_.get(draft, `${action.meta.resourceType}.ids`, []).includes(action.meta.resourceId)) {
@@ -25,13 +33,6 @@ export default function resources(state = initialState, action) {
             ...draft[action.meta.resourceType].content[action.meta.resourceId],
             ...action.payload,
           }
-        }
-      })
-    case SET:
-      return produce(state, (draft) => {
-        draft[action.meta.resourceType] = {
-          ids: normalizedPayload.ids,
-          content: normalizedPayload.content,
         }
       })
     case REMOVE:
@@ -51,7 +52,7 @@ export default function resources(state = initialState, action) {
 // Action Creators
 export function setResource(resourceType, payload) {
   return {
-    type: SET,
+    type: generateAction(SET, resourceType),
     meta: { resourceType },
     payload,
   }
@@ -59,7 +60,7 @@ export function setResource(resourceType, payload) {
 
 export function updateResource(resourceType, resourceId, payload) {
   return {
-    type: UPDATE,
+    type: generateAction(UPDATE, resourceType, resourceId),
     meta: {
       resourceType,
       resourceId,
@@ -70,7 +71,7 @@ export function updateResource(resourceType, resourceId, payload) {
 
 export function removeResource(resourceType, resourceId) {
   return {
-    type: REMOVE,
+    type: generateAction(REMOVE, resourceType, resourceId),
     meta: {
       resourceType,
       resourceId,
