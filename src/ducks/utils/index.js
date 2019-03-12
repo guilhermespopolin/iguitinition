@@ -1,12 +1,7 @@
-import { keyBy, keys } from 'lodash'
+import { keyBy } from 'lodash'
 
 export function normalizePayload(payload) {
-  const pipeline = [
-    p => keyBy(p, 'id'),
-    p => ({ ids: keys(p), content: p }),
-  ]
-
-  return pipeline.reduce((norlalizedPayload, fn) => fn(norlalizedPayload), payload)
+  return keyBy(payload, 'id')
 }
 
 export default {
