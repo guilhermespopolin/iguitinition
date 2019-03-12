@@ -1,9 +1,10 @@
-import _ from 'lodash'
 import produce from 'immer'
+import { createSelector } from 'reselect'
+import _ from 'lodash'
 
 import { normalizePayload } from 'ducks/utils'
 
-// Utils
+// Contants
 const SET = 'SET'
 const UPDATE = 'UPDATE'
 const REMOVE = 'REMOVE'
@@ -21,28 +22,24 @@ export default function resources(state = initialState, action) {
   switch (action.type.split('/')[2]) {
     case SET:
       return produce(state, (draft) => {
-        draft[action.meta.resourceType] = {
-          ids: normalizedPayload.ids,
-          content: normalizedPayload.content,
-        }
+        draft[action.meta.resourceType] = normalizedPayload
       })
     case UPDATE:
       return produce(state, (draft) => {
-        if (_.get(draft, `${action.meta.resourceType}.ids`, []).includes(action.meta.resourceId)) {
-          draft[action.meta.resourceType].content[action.meta.resourceId] = {
-            ...draft[action.meta.resourceType].content[action.meta.resourceId],
+        if (!_.isNil(_.get(draft, action.meta.resourceType))) {
+          draft[action.meta.resourceId] = {
+            ...draft[action.meta.resourceId],
             ...action.payload,
           }
         }
       })
     case REMOVE:
       return produce(state, (draft) => {
-        if (_.get(draft, `${action.meta.resourceType}.ids`, []).includes(action.meta.resourceId)) {
-          draft[action.meta.resourceType] = {
-            ids: draft[action.meta.resourceType].ids.filter(id => id !== action.meta.resourceId),
-            content: _.omit(draft[action.meta.resourceType].content, action.meta.resourceId),
-          }
+        if (!_.isNil(_.get(draft, action.meta.resourceType))) {
+          return _.pick(draft, _.keys(draft).filter(key => key !== action.meta.resourceId))
         }
+
+        return draft
       })
     default:
       return state
@@ -78,3 +75,11 @@ export function removeResource(resourceType, resourceId) {
     },
   }
 }
+
+// Selectors
+const selectResourcesState = state => _.get(state, 'resources')
+
+export const selectResource = (resource = '', resourceId) => createSelector(
+  selectResourcesState,
+  substate => _.get(substate, resource.concat(resourceId ? `.${resourceId}` : '')),
+)

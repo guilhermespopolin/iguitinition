@@ -1,4 +1,8 @@
-// Utils
+import produce from 'immer'
+import _ from 'lodash'
+import { createSelector } from 'reselect'
+
+// Constants
 const LOADING = 'LOADING'
 const FAIL = 'FAIL'
 const DONE = 'DONE'
@@ -13,33 +17,20 @@ export default function communication(state = initialState, action) {
   // gets the operation part of the action type
   switch (action.type.split('/')[2]) {
     case LOADING:
-      return {
-        ...state,
-        [action.meta.descriptor]: {
-          ...state[action.meta.descriptor],
+      return produce(state, (draft) => {
+        draft[action.meta.descriptor] = {
           isLoading: true,
           error: {},
-        },
-      }
+        }
+      })
     case FAIL:
-      return {
-        ...state,
-        [action.meta.descriptor]: {
-          ...state[action.meta.descriptor],
-          error: action.meta.error,
-        },
-      }
+      return produce(state, (draft) => {
+        draft[action.meta.descriptor].error = action.meta.error
+      })
     case DONE:
-      return Object.keys(state).reduce((acc, key) => {
-        if (key === action.meta.descriptor) {
-          return acc
-        }
-
-        return {
-          ...acc,
-          [key]: state[key],
-        }
-      }, {})
+      return produce(state, draft => (
+        _.pick(draft, _.keys(draft).filter(key => key !== action.meta.descriptor))),
+      )
     default:
       return state
   }
@@ -66,3 +57,12 @@ export function finish(descriptor) {
     meta: { descriptor },
   }
 }
+
+
+// Selectors
+const selectCommunicationState = state => _.get(state, 'communication')
+
+export const selectCommunication = (descriptor = '') => createSelector(
+  selectCommunicationState,
+  substate => _.get(substate, descriptor, {}),
+)
