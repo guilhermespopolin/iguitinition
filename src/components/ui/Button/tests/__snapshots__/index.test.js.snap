@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render properly 1`] = `
+<button
+  class="Button-sc-5mxyda-0 kgKqwu"
+>
+  Click Me
+</button>
+`;
