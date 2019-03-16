@@ -1,8 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Button /> should render properly 1`] = `
+.c0 {
+  display: inline-block;
+  padding: 0.5rem;
+  color: #ffffff;
+  background-color: #4030e8;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+}
+
+.c0:hover {
+  cursor: pointer;
+  background-color: #4030ff;
+}
+
 <button
-  class="Button-sc-5mxyda-0 kgKqwu"
+  class="c0"
 >
   Click Me
 </button>
