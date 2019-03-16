@@ -1,11 +1,10 @@
 import React from 'react'
-import { render, cleanup } from 'react-testing-library'
+import { render } from 'react-testing-library'
+import 'jest-styled-components'
 
 import { ThemeProvider } from 'styled-components'
 
 import defaultTheme from 'themes/default'
-
-afterEach(cleanup)
 
 // Utility function that allows render styled-components properly
 const renderComponent = child =>
