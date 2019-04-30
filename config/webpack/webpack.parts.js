@@ -6,7 +6,16 @@ const loadJS = () => ({
       {
         test: /\.jsx?$/,
         exclude: paths.nodeModules,
-        use: ['babel-loader', 'eslint-loader'],
+        use: [
+          'babel-loader',
+          {
+            loader: 'eslint-loader',
+            options: {
+              emitWarning: true,
+              configFile: paths.eslintCfg,
+            },
+          },
+        ],
       },
     ],
   },

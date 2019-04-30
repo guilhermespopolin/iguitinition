@@ -6,6 +6,7 @@ const src = path.resolve(root, 'src')
 const build = path.resolve(root, 'build')
 const appPublic = path.resolve(root, 'public')
 const appIndexHtml = path.resolve(appPublic, 'index.html')
+const eslintCfg = path.resolve(root, '.eslintrc')
 
 module.exports = {
   nodeModules,
@@ -13,4 +14,5 @@ module.exports = {
   build,
   appPublic,
   appIndexHtml,
+  eslintCfg,
 }
