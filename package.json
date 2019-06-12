@@ -16,7 +16,6 @@
     "mock-server": "json-server --watch src/__mocks__/db.js --port 3042"
   },
   "dependencies": {
-    "axios": "^0.18.0",
     "immer": "2.0.0",
     "lodash": "4.17.11",
     "prop-types": "15.6.2",
