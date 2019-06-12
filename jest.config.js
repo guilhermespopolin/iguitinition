@@ -27,5 +27,5 @@ module.exports = {
     '\\.(css|less)$': 'identity-obj-proxy',
   },
   modulePaths: ['<rootDir>', '<rootDir>/src'],
-  setupFiles: ['./jestsetup.config.js'],
-};
+  modulePathIgnorePatterns: ['<rootDir>/src/__tests__'],
+}

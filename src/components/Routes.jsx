@@ -1,20 +1,20 @@
-import React from 'react';
+import React from 'react'
 
-import Loadable from 'react-loadable';
-import { Switch, Route } from 'react-router-dom';
-import PageLoader from 'components/UI/pageLoader';
+import Loadable from 'react-loadable'
+import { Switch, Route } from 'react-router-dom'
+import Loading from 'components/ui/Loading'
 
-const Welcome = Loadable({
-  loader: () => import('components/screens/welcome'),
-  loading: PageLoader,
-});
+const LoadableHome = Loadable({
+  loader: () => import('components/pages/Home'),
+  loading: Loading,
+})
 
 function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={Welcome} />
+      <Route exact path="/" component={LoadableHome} />
     </Switch>
-  );
+  )
 }
 
-export default Routes;
+export default Routes
