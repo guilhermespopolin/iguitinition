@@ -4,8 +4,8 @@ exports[`<Button /> should render properly 1`] = `
 .c0 {
   display: inline-block;
   padding: 0.5rem;
-  color: #ffffff;
-  background-color: #4030e8;
+  color: #fefefe;
+  background-color: #0a30ad;
   border: none;
   outline: none;
   border-radius: 3px;
@@ -13,7 +13,7 @@ exports[`<Button /> should render properly 1`] = `
 
 .c0:hover {
   cursor: pointer;
-  background-color: #4030ff;
+  background-color: #1542d4;
 }
 
 <button

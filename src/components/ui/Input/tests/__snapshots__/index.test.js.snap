@@ -5,13 +5,13 @@ exports[`<Input /> should render properly 1`] = `
   outline: none;
   padding: 0.5rem 0.3rem;
   border: none;
-  border: 1px solid #e3e3e3;
+  border: 1px solid #e6e9f3;
   border-radius: 3px;
   color: var(--darkGray);
 }
 
 .c0:focus {
-  border: 1px solid #4030e8;
+  border: 1px solid #0a30ad;
 }
 
 <input

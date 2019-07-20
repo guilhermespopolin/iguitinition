@@ -4,7 +4,7 @@ exports[`<Title /> should render properly 1`] = `
 .c0 {
   text-align: center;
   font-size: 4rem;
-  color: #4030e8;
+  color: #0a30ad;
 }
 
 <h1
