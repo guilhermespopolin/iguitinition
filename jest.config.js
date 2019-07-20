@@ -28,4 +28,5 @@ module.exports = {
   },
   modulePaths: ['<rootDir>', '<rootDir>/src'],
   modulePathIgnorePatterns: ['<rootDir>/src/__tests__'],
+  setupFilesAfterEnv: ['@testing-library/react/cleanup-after-each'],
 }
