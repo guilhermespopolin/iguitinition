@@ -27,6 +27,6 @@ module.exports = {
     '\\.(css|less)$': 'identity-obj-proxy',
   },
   modulePaths: ['<rootDir>', '<rootDir>/src'],
-  modulePathIgnorePatterns: ['<rootDir>/src/__tests__'],
+  modulePathIgnorePatterns: ['<rootDir>/src/__tests__/utils.js'],
   setupFilesAfterEnv: ['@testing-library/react/cleanup-after-each'],
 }
