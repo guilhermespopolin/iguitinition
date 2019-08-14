@@ -17,7 +17,6 @@
     "mock-server": "json-server --watch src/__mocks__/db.js --port 3042"
   },
   "dependencies": {
-    "@react-mock/fetch": "0.3.0",
     "express": "4.17.1",
     "prop-types": "15.7.2",
     "react": "16.9.0",
@@ -37,6 +36,7 @@
     "@babel/preset-react": "7.0.0",
     "@commitlint/cli": "7.4.0",
     "@commitlint/config-conventional": "7.3.1",
+    "@react-mock/fetch": "0.3.0",
     "@testing-library/react": "8.0.5",
     "babel-eslint": "10.0.1",
     "babel-loader": "8.0.5",
