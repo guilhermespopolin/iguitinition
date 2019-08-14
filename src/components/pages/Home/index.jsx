@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Text from 'components/ui/Text'
-import Image from 'components/ui/Image'
-
 import reactLogo from 'assets/imgs/react_logo.svg'
 
 const Header = styled.header`
@@ -15,16 +12,25 @@ const Header = styled.header`
   color: ${({ theme }) => theme.colors.white};
 `
 
+const Image = styled.img`
+  height: 256px;
+  width: 256px;
+`
+
+const Text = styled.p`
+  text-align: center;
+`
+
 function Home() {
   return (
-    <div>
+    <main>
       <Header>
         <Image src={reactLogo} size="large" />
       </Header>
-      <Text alignment="center">
+      <Text>
         To get started, edit <code>src/components/pages/Home/index.jsx</code> and save to reload
       </Text>
-    </div>
+    </main>
   )
 }
 

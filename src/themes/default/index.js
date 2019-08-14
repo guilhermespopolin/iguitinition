@@ -17,14 +17,4 @@ export default {
     darkGray: '#737682',
     lightGray: '#e6e9f3',
   },
-  fontSize: {
-    small: '0.9rem',
-    medium: '1.2rem',
-    large: '2.5rem',
-  },
-  imageSize: {
-    small: '32px',
-    medium: '64px',
-    large: '256px',
-  },
 }

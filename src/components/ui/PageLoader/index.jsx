@@ -1,7 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function Loading({ error, pastDelay, timeout }) {
+import Overlay from 'components/ui/Overlay'
+import Loading from 'components/ui/Loading'
+
+function PageLoader({ error, pastDelay, timeout }) {
   if (error) {
     return <h1>Something went wrong!</h1>
   } else if (timeout) {
@@ -10,46 +13,25 @@ function Loading({ error, pastDelay, timeout }) {
     // should render loading component.
     // avoid flash of loading component
     return (
-      <div
-        css={`
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: ${({ theme }) => theme.colors.white};
-        `}
-      >
-        <div
-          css="
-            width: 64px;
-            height: 64px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background-image: url(http://i.giphy.com/3og0ISeflb7vrNzy2A.gif);
-            background-repeat: no-repeat;
-            background-position: center;
-          "
-        />
-      </div>
+      <Overlay>
+        <Loading />
+      </Overlay>
     )
   }
 
   return null
 }
 
-Loading.propTypes = {
+PageLoader.propTypes = {
   error: PropTypes.instanceOf(Error),
   pastDelay: PropTypes.bool,
   timeout: PropTypes.bool,
 }
 
-Loading.defaultProps = {
+PageLoader.defaultProps = {
   error: null,
   pastDelay: false,
   timeout: false,
 }
 
-export default Loading
+export default PageLoader

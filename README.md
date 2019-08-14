@@ -32,11 +32,7 @@ In order to run tests execute the command: `yarn test`.
  * [react-loadable](https://github.com/jamiebuilds/react-loadable) - for deal with code spliting and
  lazy loading.
  * [react-router](https://github.com/ReactTraining/react-router) - for mange routes.
- * [redux](https://redux.js.org/) - for manage global state;
- * [redux-thunk](https://github.com/reduxjs/redux-thunk) - for deal with asynchronicity on redux.
- * [css-modules](https://github.com/css-modules/css-modules) - as _CSS_ processing.
- * [jest](https://jestjs.io) + [enzyme](https://github.com/airbnb/enzyme) +
- [reac-test-renderer](https://www.npmjs.com/package/react-test-renderer) - for unit testing.
+ * [jest](https://jestjs.io) + [@testing-library/react](https://www.npmjs.com/package/@testing-library/react) - for testing.
 
 ## Author
 

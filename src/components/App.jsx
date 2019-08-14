@@ -1,12 +1,10 @@
 import React, { Fragment } from 'react'
 
-import { Provider as ReduxProvider } from 'react-redux'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Routes from 'components/Routes'
 
 import defaultTheme from 'themes/default'
-import store from 'store'
 
 const GlobalStyle = createGlobalStyle`
   /* Fonts */
@@ -20,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: Asap, sans-serif;
     color: ${({ theme }) => theme.colors.darkGray};
     background-color: ${({ theme }) => theme.colors.lightGray};
-    height: 100vh;
+    min-height: 100vh;
   }
 
   h1,
@@ -36,16 +34,14 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-    <ReduxProvider store={store}>
-      <ThemeProvider theme={defaultTheme}>
-        <Fragment>
-          <Router>
-            <Routes />
-          </Router>
-          <GlobalStyle />
-        </Fragment>
-      </ThemeProvider>
-    </ReduxProvider>
+    <ThemeProvider theme={defaultTheme}>
+      <Fragment>
+        <Router>
+          <Routes />
+        </Router>
+        <GlobalStyle />
+      </Fragment>
+    </ThemeProvider>
   )
 }
 

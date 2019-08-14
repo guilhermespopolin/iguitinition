@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PageLoader /> When page takes considerable amount of time to be loaded should render properly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.c1 {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #ffb000;
+}
+
+.c1[data-id="1"] {
+  -webkit-animation: ioOCvU 0.6s 0.1s linear infinite;
+  animation: ioOCvU 0.6s 0.1s linear infinite;
+}
+
+.c1[data-id="2"] {
+  -webkit-animation: ioOCvU 0.6s 0.2s linear infinite;
+  animation: ioOCvU 0.6s 0.2s linear infinite;
+}
+
+.c1[data-id="3"] {
+  -webkit-animation: ioOCvU 0.6s 0.3s linear infinite;
+  animation: ioOCvU 0.6s 0.3s linear infinite;
+}
+
+.c1:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+<div
+  class="c0"
+>
+  <div
+    class=""
+    data-testid="loading"
+  >
+    <div
+      class="c1"
+      data-id="1"
+    />
+    <div
+      class="c1"
+      data-id="2"
+    />
+    <div
+      class="c1"
+      data-id="3"
+    />
+  </div>
+</div>
+`;
+
+exports[`<PageLoader /> When some error occur during page loading should render properly 1`] = `
+<h1>
+  Something went wrong!
+</h1>
+`;
+
+exports[`<PageLoader /> When timeout occur during page loading should render properly 1`] = `
+<h1>
+  Is taking a long time...refresh page
+</h1>
+`;
