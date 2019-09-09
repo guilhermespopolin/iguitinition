@@ -21,6 +21,17 @@ const loadJS = () => ({
   },
 })
 
+const loadCSS = () => ({
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+})
+
 const loadAsset = () => ({
   module: {
     rules: [
@@ -37,5 +48,6 @@ const loadAsset = () => ({
 
 module.exports = {
   loadJS,
+  loadCSS,
   loadAsset,
 }

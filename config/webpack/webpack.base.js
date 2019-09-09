@@ -31,5 +31,6 @@ module.exports = merge(
     },
   },
   parts.loadJS(),
+  parts.loadCSS(),
   parts.loadAsset(),
 )
